@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  ansible:
+    container_name: "cmm"
+    hostname: "cmm"
+    init: true
+    build:
+      context: .
+    environment:
+      BIND_IP: "0.0.0.0"
+      BIND_PORT: "8099"
+    command: "xxx"
