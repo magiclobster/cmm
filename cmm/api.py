@@ -30,7 +30,7 @@ def page(user_id):
 
 @api.route('/register')
 def register():
-    return render_template("register.html", tags=tags)
+    return render_template("register.html", tags=tags, c=app.config_obj, title="Register")
 
 
 @api.route('/response', methods=['POST'])

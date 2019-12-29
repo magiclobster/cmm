@@ -9,9 +9,8 @@
     <script src="{{c.webcdn.popper_cdn}}" crossorigin="anonymous"></script>
     <script src="{{c.webcdn.bootstrap_cdn}}" crossorigin="anonymous"></script>
     <title>{% block title %}{% endblock %}</title>
-
 </head>
-<body class="d-flex flex-column" style="height: 100vh;">
+<body class="d-flex flex-column cmm-body">
 <!-- Navigation Top Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height:80px;">
 
@@ -53,15 +52,16 @@
     </nav>
 
 <!-- Page Content -->
-    <div id="page-content" style="min-height: 100%; margin-bottom: -50px;">
+    <div id="page-content" class="cmm-content">
     {% block content %}{% endblock %}
     </div>
 
 <!-- Footer -->
+<!--
     <footer class="py-4 bg-dark text-white-50 cmm-footer">
     <div class="container text-center">
       <small>CopyLeft &copy; 2019 by {{ c.app.author }}</small>
     </div>
-  </footer>
+  </footer> -->
 </body>
 </html>

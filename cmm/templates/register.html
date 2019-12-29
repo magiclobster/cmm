@@ -1,33 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>register</title>
-    </head>
- <body>
+{% extends "default/base.html" %}
+
+{% block title %}
+ {{c.app.app_title + " " + c.app.version_string + " - " + title}}
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h3>Please Register as a Mentee</h3>
     <form method="POST" action="{{url_for('api.register_response')}}">
-        <label for="nickname">nickname:
-            <input type="text" name="nickname" required>
-        </label>
-        <label for="mail">mail:
-            <input type="email" name="mail" required>
-        </label>
-        <label for="description">describe yourself:
-            <textarea rows="5" cols="60" name="description"></textarea>
-        </label>
-        <br>
+
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="nickname" class="form-control" required>
+
+
+                    <label for="mail">Mail:</label>
+                    <input type="email" id="mail" class="form-control" required>
+
+
+
+                    <label for="description">Description:</label>
+                    <textarea
+                            rows="5"
+                            cols="60"
+                            id="description"
+                            class="form-control"
+                            placeholder="Please give us a brief description of yourself and your interests!">
+
+                    </textarea>
+
+
+        <br><br>
+        <h6>Please select your Interests:</h6>
         {% for tag in tags: %}
         <fieldset id="{{tag}}">
-            <legend>{{tag}}</legend>
-            <label for="interested">interested</label>
-            <input type="radio" name="{{tag}}" id="interested" value="interested" checked="checked" />
-            <label for="maybe">maybe</label>
-            <input type="radio" name="{{tag}}" id="maybe" value="maybe"/>
-            <label for="dislike">interested</label>
-            <input type="radio" name="{{tag}}" id="dislike" value="dislike" />
+
+
+
+                        <div class="form-col cmm-border-right">
+                            <h7>{{tag}}: </h7>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="{{tag}}" id="interested" value="interested" checked="checked" />
+                                <label for="interested" class="form-check-label">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="{{tag}}" id="maybe" value="maybe"/>
+                                <label for="maybe" class="form-check-label">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="{{tag}}" id="dislike" value="dislike" />
+                                 <label for="dislike" class="form-check-label">3</label>
+                            </div>
+                        </div>
+
+
+
         </fieldset>
+
         {% endfor %}
-        <input type="submit" value="Submit">
+        <br>
+        <input type="submit" class="btn btn-primary" value="Register" class="form-check-input">
+        <br>
     </form>
- </body>
-</html>
+    </div>
+{% endblock %}
