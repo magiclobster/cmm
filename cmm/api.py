@@ -43,4 +43,4 @@ def register_response():
         if request.form.get(tag):
             chaos_tags[tag] = (request.form.get(tag))
     user_uuid = create_user(nickname, mail, description, chaos_tags)
-    return render_template("register_response.html", name=nickname, mail=mail, description=description, tags=chaos_tags, user_uuid=user_uuid)
+    return render_template("register_response.html", name=nickname, mail=mail, description=description, tags=chaos_tags, user_uuid=user_uuid, c=app.config_obj, title="Register Response")
