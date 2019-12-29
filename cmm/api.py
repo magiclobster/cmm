@@ -17,7 +17,7 @@ tags = [
 
 @api.route('/')
 def get_index():
-    return render_template('main.html', c=app.config_obj)
+    return render_template('main.html', c=app.config_obj, title="Startseite")
 
 
 @api.route('/register')

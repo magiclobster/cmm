@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100vh;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{c.webcdn.bootstrap_css_cdn}}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{c.static.css}}" crossorigin="anonymous">
     <script src="{{c.webcdn.jquery_cdn}}" crossorigin="anonymous"></script>
     <script src="{{c.webcdn.popper_cdn}}" crossorigin="anonymous"></script>
     <script src="{{c.webcdn.bootstrap_cdn}}" crossorigin="anonymous"></script>
-    <title>{{c.app.app_title + " " + c.app.version_string}} </title>
+    <title>{% block title %}{% endblock %}</title>
 
 </head>
-<body class="d-flex flex-column">
+<body class="d-flex flex-column" style="height: 100vh;">
 <!-- Navigation Top Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">{{c.app.app_title}} <small>{{c.app.version_string}}</small></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height:80px;">
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,21 +42,25 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <a class="navbar-brand" href="#">
+            <span>
+                {{c.app.app_title}}
+                <small class="text-success">{{c.event.title}} Edition</small>
+            </span>
+            <small>{{c.app.version_string}}</small>
+        </a>
       </div>
     </nav>
-<div id="page-content">
-{% block content %}{% endblock %}
-</div>
 
+<!-- Page Content -->
+    <div id="page-content" style="min-height: 100%; margin-bottom: -50px;">
+    {% block content %}{% endblock %}
+    </div>
 
 <!-- Footer -->
-<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <footer class="py-4 bg-dark text-white-50 cmm-footer">
     <div class="container text-center">
-      <small>CopyLeft &copy; 2019 by Chaosmentors</small>
+      <small>CopyLeft &copy; 2019 by {{ c.app.author }}</small>
     </div>
   </footer>
 </body>

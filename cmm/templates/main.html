@@ -1,0 +1,18 @@
+{% extends "default/base.html" %}
+
+{% block title %}
+ {{c.app.app_title + " " + c.app.version_string + " - " + title}}
+{% endblock %}
+
+{% block content %}
+<br><br>
+<div class="jumbotron">
+  <h1 class="display-4">{{c.app.app_title}}</h1>
+  <p class="lead">Willkommen im Matchmaking System der Chaospatinnen</p>
+  <hr class="my-4">
+  <p>Wenn der kommende {{c.event.iteration}}. {{c.event.subtitle}} - {{c.event.title}} dein erstes Chaosevent ist
+  und du ein wenig Hilfe und Begleitung suchst, um dir den Einstieg leicher zu machen,
+  dann kannst du dich hier für unser Projekt registrieren!</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Registrieren</a>
+</div>
+{% endblock %}

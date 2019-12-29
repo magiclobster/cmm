@@ -14,7 +14,7 @@ app.register_blueprint(api, url_prefix="/api")
 def run_server():
     config = ConfigObj('config/main.config', configspec='config/main.config.spec')
     app.config_obj = config
-    app.run(host=os.getenv('BIND_IP', '127.0.0.1'), port=int(os.getenv('BIND_PORT', 8199)))
+    app.run(host=os.getenv('BIND_IP', '127.0.0.1'), port=int(os.getenv('BIND_PORT', 8199)),debug=True)
 
 
 if __name__ == '__main__':
