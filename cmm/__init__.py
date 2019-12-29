@@ -4,11 +4,11 @@ import os
 
 from flask import Flask
 from configobj import ConfigObj
-from cmm.api import api
+from cmm.users import users
 
 app = Flask(__name__)
 
-app.register_blueprint(api, url_prefix="/api")
+app.register_blueprint(users, url_prefix="/users")
 
 
 def run_server():

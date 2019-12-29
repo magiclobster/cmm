@@ -7,7 +7,7 @@
 {% block content %}
 <div class="jumbotron">
     <h3>Please Register as a Mentee</h3>
-    <form method="POST" action="{{url_for('api.register_response')}}">
+    <form method="POST" action="{{url_for('users.register_response')}}">
 
                     <label for="nickname">Nickname:</label>
                     <input type="text" id="nickname" name="nickname" class="form-control" required>
