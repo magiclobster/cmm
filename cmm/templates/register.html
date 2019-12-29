@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>register</title>
+    </head>
+ <body>
+    <form method="POST" action="{{url_for('api.register_response')}}">
+        <label for="nickname">nickname:
+            <input type="text" name="nickname" required>
+        </label>
+        <label for="mail">mail:
+            <input type="email" name="mail" required>
+        </label>
+        <label for="description">describe yourself:
+            <textarea rows="5" cols="60" name="description"></textarea>
+        </label>
+        <br>
+        {% for tag in tags: %}
+        <fieldset id="{{tag}}">
+            <legend>{{tag}}</legend>
+            <label for="interested">interested</label>
+            <input type="radio" name="{{tag}}" id="interested" value="interested" checked="checked" />
+            <label for="maybe">maybe</label>
+            <input type="radio" name="{{tag}}" id="maybe" value="maybe"/>
+            <label for="dislike">interested</label>
+            <input type="radio" name="{{tag}}" id="dislike" value="dislike" />
+        </fieldset>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+ </body>
+</html>
