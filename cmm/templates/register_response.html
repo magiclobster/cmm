@@ -8,6 +8,10 @@
   {% if name %}
   <h1>thank you for registering {{name}}!</h1>
   {% endif %}
-  <p>please check your mail to activatges aasdf adf</p>
+    {% if tags %}
+  <h1>{{tags}}!</h1>
+  {% endif %}
+  <p>please check your mail ({{mail}}) to finish activation</p>
+  <p>debug {{user_uuid}}</p>
   </body>
 </html>
