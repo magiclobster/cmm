@@ -19,7 +19,7 @@ tags = [
 
 @users.route('/')
 def get_index():
-    return render_template('main.html', c=app.config_obj, title="Startseite")
+    return render_template('main.html', c=app.config_obj, title="Startseite", lang = app.languages)
 
 
 @users.route('/<user_id>')

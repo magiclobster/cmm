@@ -31,10 +31,11 @@
               Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+                {%for l in lang:%}
+                    <a class="dropdown-item" href="#">{{lang[l]}}</a>
+                {%endfor%}
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+
             </div>
           </li>
           <li class="nav-item">
@@ -63,5 +64,8 @@
       <small>CopyLeft &copy; 2019 by {{ c.app.author }}</small>
     </div>
   </footer> -->
+<div id="page-footer" class="cmm-footer">
+    {% block footer %}{% endblock %}
+</div>
 </body>
 </html>
