@@ -13,6 +13,7 @@ app.register_blueprint(users, url_prefix="/users")
 
 def run_server():
     config = ConfigObj('config/main.config', configspec='config/main.config.spec')
+    app.config_obj = config
     app.run(
         host=os.getenv('BIND_IP', config['main']['server_ip']),
         port=int(os.getenv('BIND_PORT', config['main']['server_port'])),
