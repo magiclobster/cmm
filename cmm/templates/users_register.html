@@ -6,19 +6,19 @@
 
 {% block content %}
 <div class="jumbotron">
-    <h3>Please Register as a Mentee</h3>
+    <h3>{{_('Please Register as a Mentee')}}</h3>
     <form method="POST" action="{{url_for('users.register_response')}}">
 
-                    <label for="nickname">Nickname:</label>
+                    <label for="nickname">{{_('Nickname')}}:</label>
                     <input type="text" id="nickname" name="nickname" class="form-control" required>
 
 
-                    <label for="mail">Mail:</label>
+                    <label for="mail">{{_('Mail')}}:</label>
                     <input type="email" id="mail" name="mail" class="form-control" required>
 
 
 
-                    <label for="description">Description:</label>
+                    <label for="description">{{_('Description')}}:</label>
                     <textarea
                             rows="5"
                             cols="60"
@@ -30,7 +30,7 @@
 
 
         <br><br>
-        <h6>Please select your Interests:</h6>
+        <h6>{{_('Please select your Interests')}}:</h6>
         {% for tag in tags: %}
         <fieldset id="{{tag}}">
 
@@ -60,7 +60,7 @@
 
         {% endfor %}
         <br>
-        <input type="submit" class="btn btn-primary" value="Register" class="form-check-input">
+        <input type="submit" class="btn btn-primary" value="{{_('Register')}}" class="form-check-input">
         <br>
     </form>
     </div>

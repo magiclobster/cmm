@@ -20,7 +20,7 @@ app.babel = Babel(app)
 @app.babel.localeselector
 def get_locale():
     print("Checking locale")
-    return 'en'
+    return 'de'
 
 def run_server():
     config = ConfigObj('config/main.config', configspec='config/main.config.spec')

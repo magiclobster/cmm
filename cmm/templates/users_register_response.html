@@ -9,20 +9,20 @@
   <div class="d-flex flex.row">
     <div class="d-flex flex.col" style="width:40%;">
       <div>
-        <h4>Thank you for your Registration {% if name %}<span class="text-success">{{name}}{% endif %}</span></h4>
-      We recorded the following information: <br>
+        <h4>{{_('Thank you for your Registration')}} {% if name %}<span class="text-success">{{name}}{% endif %}</span></h4>
+      {{_('We recorded the following information')}}: <br>
       </div>
 
     </div>
     <div class="d-flex flex.col">
       <div>
-        <h7>Link to your Account: <b>
+        <h7>{{_('Link to your Account')}}: <b>
           <a href="#">{{c.app.site_url + "/" + user_uuid}}</a>
         </b></h7>
         <br>
-        Your E-Mail: {{mail}}
+        {{_('Your E-Mail')}}: {{mail}}
         <br>
-        Your Selection:
+        {{_('Your Selection')}}:
 
       </div>
 
@@ -31,7 +31,7 @@
 
 
 </div>
-Shortly you will receive a E-Mail containing further Information and Instructions about how to proceed.
+{{_('Shortly you will receive a E-Mail containing further Information and Instructions about how to proceed')}}.
 <!--
   {% if name %}
   <h1>thank you for registering {{name}}!</h1>

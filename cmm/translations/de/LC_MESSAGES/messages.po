@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-31 17:29+0100\n"
-"PO-Revision-Date: 2019-12-31 17:29+0100\n"
+"POT-Creation-Date: 2019-12-31 17:44+0100\n"
+"PO-Revision-Date: 2019-12-31 17:46+0100\n"
 "Last-Translator: \n"
 "Language: de\n"
 "Language-Team: de <LL@li.org>\n"
@@ -21,13 +21,73 @@ msgstr ""
 
 #: templates/main.html:13
 msgid "Welcome to the matchmaking software of the Chaosmentors"
-msgstr "Willkommen bei der Matchmaking Software des Chaosmentors Projekts."
+msgstr "Willkommen bei der Matchmaking Software des Chaosmentors Projekts"
 
 #: templates/main.html:15
-msgid "demo"
-msgstr "demo"
+msgid "Demotext"
+msgstr "Demotext"
+
+#: templates/main.html:17 templates/users_register.html:63
+msgid "Register"
+msgstr "Registrieren"
+
+#: templates/users_register.html:9
+msgid "Please Register as a Mentee"
+msgstr "Als Chaospatenkind registrieren"
+
+#: templates/users_register.html:12
+msgid "Nickname"
+msgstr "Benutzername"
+
+#: templates/users_register.html:16
+msgid "Mail"
+msgstr "E-Mail"
+
+#: templates/users_register.html:21
+msgid "Description"
+msgstr "Beschreibung"
+
+#: templates/users_register.html:33
+msgid "Please select your Interests"
+msgstr "Bitte wähle deine Interessen"
+
+#: templates/users_register_response.html:12
+msgid "Thank you for your Registration"
+msgstr "Danke für deine Registrierung"
+
+#: templates/users_register_response.html:13
+msgid "We recorded the following information"
+msgstr "Wir haben die folgenden Informationen gespeichert"
+
+#: templates/users_register_response.html:19
+msgid "Link to your Account"
+msgstr "Link zu deinem Benutzerkonto"
+
+#: templates/users_register_response.html:23
+msgid "Your E-Mail"
+msgstr "Deine E-Mail"
+
+#: templates/users_register_response.html:25
+msgid "Your Selection"
+msgstr "Deine Auswahl"
+
+#: templates/users_register_response.html:34
+msgid ""
+"Shortly you will receive a E-Mail containing further Information and "
+"Instructions about how to proceed"
+msgstr ""
+"In Kürze erhälst du eine E-Mail mit weiteren Informationen, wie es "
+"weitergeht"
 
 #~ msgid ""
-#~ "If the upcoming %(iteration). %(subtitle) - %(title) is your first \"Chaos\" Event and\n"
-#~ "  you need some advice, help or feel a little unsecure visiting those \"Hackers\", please feel free to register."
-#~ msgstr "Wenn der kommente %(iteration). %(subtitle) - %(title) dein erstes \"Chaos\" Event ist und du dich ein wenig unsicher fühlst, unter all den Hackern zu sein, registriere dich auf unserer Seite."
+#~ "If the upcoming %(iteration). %(subtitle) - %(title) is your first "
+#~ "\"Chaos\" Event and\n"
+#~ "  you need some advice, help or feel a little unsecure visiting "
+#~ "those \"Hackers\", please feel free to register."
+#~ msgstr ""
+#~ "Wenn der kommente %(iteration). %(subtitle) - %(title) dein erstes "
+#~ "\"Chaos\" Event ist und du dich ein wenig unsicher fühlst, unter all "
+#~ "den Hackern zu sein, registriere dich auf unserer Seite."
+
+#~ msgid "demo"
+#~ msgstr "demo"

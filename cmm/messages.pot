@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-31 17:29+0100\n"
+"POT-Creation-Date: 2019-12-31 17:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,56 @@ msgid "Welcome to the matchmaking software of the Chaosmentors"
 msgstr ""
 
 #: templates/main.html:15
-msgid "demo"
+msgid "Demotext"
+msgstr ""
+
+#: templates/main.html:17 templates/users_register.html:63
+msgid "Register"
+msgstr ""
+
+#: templates/users_register.html:9
+msgid "Please Register as a Mentee"
+msgstr ""
+
+#: templates/users_register.html:12
+msgid "Nickname"
+msgstr ""
+
+#: templates/users_register.html:16
+msgid "Mail"
+msgstr ""
+
+#: templates/users_register.html:21
+msgid "Description"
+msgstr ""
+
+#: templates/users_register.html:33
+msgid "Please select your Interests"
+msgstr ""
+
+#: templates/users_register_response.html:12
+msgid "Thank you for your Registration"
+msgstr ""
+
+#: templates/users_register_response.html:13
+msgid "We recorded the following information"
+msgstr ""
+
+#: templates/users_register_response.html:19
+msgid "Link to your Account"
+msgstr ""
+
+#: templates/users_register_response.html:23
+msgid "Your E-Mail"
+msgstr ""
+
+#: templates/users_register_response.html:25
+msgid "Your Selection"
+msgstr ""
+
+#: templates/users_register_response.html:34
+msgid ""
+"Shortly you will receive a E-Mail containing further Information and "
+"Instructions about how to proceed"
 msgstr ""
 
