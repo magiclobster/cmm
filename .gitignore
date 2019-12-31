@@ -226,3 +226,4 @@ pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/linux,python,pycharm,virtualenv
 /cmm/notes_linny.txt
+/cmm/linny-test/

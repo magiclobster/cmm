@@ -1,4 +1,5 @@
 flask
+flask_babel
 waitress
 configobj
 unqlite

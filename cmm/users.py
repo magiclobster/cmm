@@ -3,7 +3,7 @@
 
 from flask import render_template, Blueprint, request
 from flask import current_app as app
-
+from flask_babel import gettext
 from .unqlite_db import create_user, get_user
 
 users = Blueprint('users', __name__, template_folder='templates')

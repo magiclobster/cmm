@@ -1,0 +1,33 @@
+# German translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-12-31 17:29+0100\n"
+"PO-Revision-Date: 2019-12-31 17:29+0100\n"
+"Last-Translator: \n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: templates/main.html:13
+msgid "Welcome to the matchmaking software of the Chaosmentors"
+msgstr "Willkommen bei der Matchmaking Software des Chaosmentors Projekts."
+
+#: templates/main.html:15
+msgid "demo"
+msgstr "demo"
+
+#~ msgid ""
+#~ "If the upcoming %(iteration). %(subtitle) - %(title) is your first \"Chaos\" Event and\n"
+#~ "  you need some advice, help or feel a little unsecure visiting those \"Hackers\", please feel free to register."
+#~ msgstr "Wenn der kommente %(iteration). %(subtitle) - %(title) dein erstes \"Chaos\" Event ist und du dich ein wenig unsicher fühlst, unter all den Hackern zu sein, registriere dich auf unserer Seite."
