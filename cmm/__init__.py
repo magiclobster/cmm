@@ -7,11 +7,13 @@ from flask import Flask, request, session
 from flask_babel import Babel
 from configobj import ConfigObj
 from flask_debugtoolbar import DebugToolbarExtension
-from users import users
-from admin import admin
+from views.root import root
+from views.users import users
+from views.admin import admin
 
 
 app = Flask(__name__)
+app.register_blueprint(root, url_prefix="/")
 app.register_blueprint(users, url_prefix="/users")
 app.register_blueprint(admin, url_prefix="/admin")
 

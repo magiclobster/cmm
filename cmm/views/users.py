@@ -17,12 +17,6 @@ tags = [
         ]
 
 
-@users.route('/')
-def get_index():
-    userlist = get_all_users()
-    return render_template('main.html', c=app.config_obj, title="Startseite", lang=app.languages, users=userlist)
-
-
 @users.route('/<user_id>')
 def page(user_id):
     user = get_user(user_id)
