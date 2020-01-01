@@ -25,6 +25,12 @@ def get_user(user_uuid):
     except KeyError:
         return None
 
+def get_all_users():
+    db = get_or_create_db()
+    try:
+        return db.collection('users').all()
+    except KeyError:
+        return None
 
 def create_user(name, mail, description, tags):
     db = get_or_create_db()

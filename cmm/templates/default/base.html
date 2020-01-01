@@ -8,6 +8,7 @@
     <script src="{{c.webcdn.jquery_cdn}}" crossorigin="anonymous"></script>
     <script src="{{c.webcdn.popper_cdn}}" crossorigin="anonymous"></script>
     <script src="{{c.webcdn.bootstrap_cdn}}" crossorigin="anonymous"></script>
+
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body class="d-flex flex-column cmm-body">
@@ -28,11 +29,11 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              {{_('Language Selection')}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {%for l in lang:%}
-                    <a class="dropdown-item" href="#">{{lang[l]}}</a>
+                    <div class="dropdown-item" onclick={clickhandler('{{l}}')}>{{lang[l]}}</div>
                 {%endfor%}
               <div class="dropdown-divider"></div>
 
@@ -67,5 +68,6 @@
 <div id="page-footer" class="cmm-footer">
     {% block footer %}{% endblock %}
 </div>
+<script src="{{c.static.js}}"></script>
 </body>
 </html>
