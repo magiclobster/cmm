@@ -47,6 +47,9 @@ def run_server():
     app.secret_key = config['app']['secret_key']
     app.debug = config['main']['server_debug']
     DebugToolbarExtension(app)
+    if config['main']['create_test_data']:
+        from helpers.create_demo_database import create_demo_db
+        create_demo_db('cmm.db', '../helpers/demodata/user_demodata.json', 25)
     app.run(
         host=os.getenv('BIND_IP', config['main']['server_ip']),
         port=int(os.getenv('BIND_PORT', config['main']['server_port'])))

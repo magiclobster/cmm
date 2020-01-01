@@ -58,10 +58,10 @@ def update_user():
 
 
 if __name__ == '__main__':
-    # db = get_or_create_db()
-    uuid = create_user('basti', 'basti@xxx.de', 'asdasdsadsadsa', [], active=True, is_admin=True)
-    print(uuid)
-    #print(db.collection('users').all())
+    db = get_or_create_db()
+    #uuid = create_user('basti', 'basti@xxx.de', 'asdasdsadsadsa', [], active=True, is_admin=True)
+    #print(uuid)
+    print(db.collection('users').all())
     #update_user()
 
 

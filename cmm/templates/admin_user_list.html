@@ -6,6 +6,7 @@
 
 {% block content %}
 
-<p>admin required</p>
-
+{% for user in users %}
+ <p>{{ user.name.decode('utf8') }}</p>
+{% endfor %}
 {% endblock %}

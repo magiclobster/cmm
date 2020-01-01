@@ -3,7 +3,7 @@
 # module for admin pages
 from functools import wraps
 
-from flask import render_template, Blueprint, request, session
+from flask import render_template, Blueprint, request
 from flask import current_app as app
 from unqlite_db import create_user, get_user, get_all_users
 from werkzeug.exceptions import abort
@@ -35,5 +35,9 @@ def is_admin(user_id):
 @admin.route('/users')
 @admin_required
 def get_index():
-    userlist = get_all_users()
-    return render_template('admin_xxx.html', c=app.config_obj, title="Startseite", lang=app.languages, users=userlist)
+    all_users = get_all_users()
+    return render_template('admin_user_list.html',
+                           c=app.config_obj,
+                           title="Startseite",
+                           lang=app.languages,
+                           users=all_users)

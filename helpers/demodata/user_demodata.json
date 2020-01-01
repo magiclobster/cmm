@@ -1,5 +1,13 @@
 [
 	{
+		"id": "acab",
+		"name": "superadmin",
+		"is_admin": true,
+		"mail": "iam@root.org",
+		"description": "superman can fly",
+		"tags": "1, -1, 0, 0, 1, -1, 0, 1, -1, 1"
+	},
+	{
 		"name": "Hamilton",
 		"mail": "nisi.Cum.sociis@turpisAliquamadipiscing.co.uk",
 		"description": "Lorem ipsum dolor sit amet,",
