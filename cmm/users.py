@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''Module for the user Pages'''
-from flask import render_template, Blueprint, request, session
+from flask import render_template, Blueprint, request, session, make_response
 from flask import current_app as app
 from flask_babel import gettext
 from unqlite_db import create_user, get_user, get_all_users
@@ -20,13 +20,15 @@ tags = [
 @users.route('/')
 def get_index():
     userlist = get_all_users()
-    return render_template('main.html', c=app.config_obj, title="Startseite", lang = app.languages, users=userlist)
+    return render_template('main.html', c=app.config_obj, title="Startseite", lang=app.languages, users=userlist)
 
 
 @users.route('/<user_id>')
 def page(user_id):
     user = get_user(user_id)
-    return render_template("users_profile.html", user=user)
+    resp = make_response(render_template("users_profile.html", user=user))
+    resp.set_cookie('user_id', user_id)
+    return resp
 
 
 @users.route('/register')
