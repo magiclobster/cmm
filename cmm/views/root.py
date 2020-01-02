@@ -14,4 +14,4 @@ root = Blueprint('root', __name__, template_folder='templates')
 @root.route('/')
 def get_index():
     user_list = get_all_users()
-    return render_template('main.html', c=app.config_obj, title="Startseite", lang=app.languages, users=user_list)
+    return render_template('root_main.html', c=app.config_obj, title="Startseite", lang=app.languages, users=user_list)

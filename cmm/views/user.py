@@ -4,33 +4,25 @@
 from flask import render_template, Blueprint, request, session, make_response
 from flask import current_app as app
 from flask_babel import gettext
-from unqlite_db import create_user, get_user, get_all_users
+from unqlite_db import create_user, get_user, get_all_users, get_tags
 
-users = Blueprint('users', __name__, template_folder='templates')
-
-tags = [
-    'lockpicking',
-    'hacking',
-    'soldering',
-    'dancing',
-    'music'
-        ]
+user = Blueprint('user', __name__, template_folder='templates')
 
 
-@users.route('/<user_id>')
+@user.route('/<user_id>')
 def page(user_id):
-    user = get_user(user_id)
-    resp = make_response(render_template("users_profile.html", user=user))
+    user_data = get_user(user_id)
+    resp = make_response(render_template("user_profile.html", user=user_data))
     resp.set_cookie('user_id', user_id)
     return resp
 
 
-@users.route('/register')
+@user.route('/register')
 def register():
-    return render_template("users_register.html", tags=tags, c=app.config_obj, title="Register")
+    return render_template("user_register.html", tags=get_tags(), c=app.config_obj, title="Register")
 
 
-@users.route('/response', methods=['POST'])
+@user.route('/response', methods=['POST'])
 def register_response():
     nickname = request.form.get("nickname")
     mail = request.form.get("mail")
@@ -41,7 +33,7 @@ def register_response():
             chaos_tags[tag] = (request.form.get(tag))
     user_uuid = create_user(nickname, mail, description, chaos_tags)
     return render_template(
-        "users_register_response.html",
+        "user_register_response.html",
         name=nickname,
         mail=mail,
         description=description,

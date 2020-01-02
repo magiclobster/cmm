@@ -8,13 +8,13 @@ from flask_babel import Babel
 from configobj import ConfigObj
 from flask_debugtoolbar import DebugToolbarExtension
 from views.root import root
-from views.users import users
+from views.user import user
 from views.admin import admin
 
 
 app = Flask(__name__)
 app.register_blueprint(root, url_prefix="/")
-app.register_blueprint(users, url_prefix="/users")
+app.register_blueprint(user, url_prefix="/user")
 app.register_blueprint(admin, url_prefix="/admin")
 
 # translations
@@ -51,7 +51,7 @@ def run_server():
     DebugToolbarExtension(app)
     if config['main']['create_test_data']:
         from helpers.create_demo_database import create_demo_db
-        create_demo_db('cmm.db', '../helpers/demodata/user_demodata.json', 25)
+        create_demo_db('cmm.db', '../helpers/demodata', 25)
     app.run(
         host=os.getenv('BIND_IP', config['main']['server_ip']),
         port=int(os.getenv('BIND_PORT', config['main']['server_port'])))
