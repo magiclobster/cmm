@@ -5,10 +5,10 @@ from functools import wraps
 
 from flask import render_template, Blueprint, request
 from flask import current_app as app
-from unqlite_db import create_user, get_user, get_all_users
+from cmm.unqlite_db import get_user, get_all_users
 from werkzeug.exceptions import abort
 
-admin = Blueprint('admin', __name__, template_folder='templates')
+admin = Blueprint('admin_', __name__, template_folder='templates')
 
 
 def admin_required(f):

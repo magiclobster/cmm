@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Chaosmentors Matchpoint App"""
-import os
-
-from flask import Flask, request, session
-from flask_babel import Babel
+"""
+Chaosmentors Matchpoint App
+"""
 from configobj import ConfigObj
-from flask_debugtoolbar import DebugToolbarExtension
-from views.root import root
-from views.user import user
-from views.admin import admin
-
+from flask import Flask
+from flask_babel import Babel
+from peewee import SqliteDatabase
 
 app = Flask(__name__)
-app.register_blueprint(root, url_prefix="/")
-app.register_blueprint(user, url_prefix="/user")
-app.register_blueprint(admin, url_prefix="/admin")
+
+config = ConfigObj('config/main.config', configspec='config/main.config.spec')
+app.config_obj = config
 
 # translations
 # Available Languages
@@ -23,39 +19,7 @@ app.languages = {'en': 'English', 'de': 'Deutsch'}
 app.babel = Babel(app)
 app.selected_language = 'en'
 
-
-@app.babel.localeselector
-def get_locale():
-    """
-    Get the users locale Setting
-    """
-    if 'lang' in session:
-        ret = session['lang']
-        session['lang'] = 'de'
-    else:
-        ret = request.accept_languages.best_match(app.languages.keys())
-
-    #ret = 'en'
-    return ret
+DATABASE = 'cmm_db.sqlite'
+db = SqliteDatabase(DATABASE)
 
 
-def run_server():
-    """
-    Start the Development Server
-    """
-    print(app.selected_language)
-    config = ConfigObj('config/main.config', configspec='config/main.config.spec')
-    app.config_obj = config
-    app.secret_key = config['app']['secret_key']
-    app.debug = config['main']['server_debug']
-    DebugToolbarExtension(app)
-    if config['main']['create_test_data']:
-        from helpers.create_demo_database import create_demo_db
-        create_demo_db('cmm.db', '../helpers/demodata', 25)
-    app.run(
-        host=os.getenv('BIND_IP', config['main']['server_ip']),
-        port=int(os.getenv('BIND_PORT', config['main']['server_port'])))
-
-
-if __name__ == '__main__':
-    run_server()

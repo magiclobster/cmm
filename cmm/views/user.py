@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-'''Module for the user Pages'''
-from flask import render_template, Blueprint, request, session, make_response
+"""
+Module for the user Pages
+"""
+from flask import render_template, Blueprint, request, make_response
 from flask import current_app as app
-from flask_babel import gettext
-from unqlite_db import create_user, get_user, get_all_users, get_tags
+from cmm.unqlite_db import create_user, get_user, get_tags
+from cmm.models.user import User
+from cmm.models.user import UserForm
 
 user = Blueprint('user', __name__, template_folder='templates')
 
@@ -19,7 +22,9 @@ def page(user_id):
 
 @user.route('/register')
 def register():
-    return render_template("user_register.html", tags=get_tags(), c=app.config_obj, title="Register")
+    u = User()
+    form = UserForm(request.form, obj=u)
+    return render_template("user_register_p.html", tags=get_tags(), c=app.config_obj, title="Register", form=form)
 
 
 @user.route('/response', methods=['POST'])

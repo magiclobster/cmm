@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# module for admin pages
-from functools import wraps
+# module for root pages
 
-from flask import render_template, Blueprint, request
+from flask import render_template, Blueprint
 from flask import current_app as app
-from unqlite_db import create_user, get_user, get_all_users
-from werkzeug.exceptions import abort
+from cmm.unqlite_db import get_all_users
 
 root = Blueprint('root', __name__, template_folder='templates')
 

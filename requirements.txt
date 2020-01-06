@@ -1,5 +1,8 @@
 flask
+flask_admin
 flask_babel
+peewee
+wtf-peewee
 waitress
 configobj
 unqlite
