@@ -12,32 +12,36 @@
           <p>{{ field.label }} {{ field(class_="form-control") }}</p>
         {% endfor %}
 
+
         <br><br>
+
         <h6>{{_('Please select your Interests')}}:</h6>
+
+
         {% for tag in tags: %}
         <fieldset id="{{tag}}">
                         <div class="form-col cmm-border-right">
-                            <h7>{{tag}}: </h7>
+                            <h7>{{tag}}:</h7>
                         </div>
                         <div class="form-col">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="{{tag}}" id="interested" value="interested" checked="checked" />
-                                <label for="interested" class="form-check-label">1</label>
+                                <input class="form-check-input" type="radio" name="{{tag}}" id="interested" value="2" checked="checked" />
+                                <label for="interested" class="form-check-label">interested</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="{{tag}}" id="maybe" value="maybe"/>
-                                <label for="maybe" class="form-check-label">2</label>
+                                <input class="form-check-input" type="radio" name="{{tag}}" id="maybe" value="1"/>
+                                <label for="maybe" class="form-check-label">maybe</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="{{tag}}" id="dislike" value="dislike" />
-                                 <label for="dislike" class="form-check-label">3</label>
+                                <input class="form-check-input" type="radio" name="{{tag}}" id="dislike" value="0" />
+                                 <label for="dislike" class="form-check-label">dislike</label>
                             </div>
                         </div>
         </fieldset>
 
         {% endfor %}
         <br>
-        <input type="submit" class="btn btn-primary" value="{{_('Register')}}" class="form-check-input">
+        <input type="submit" class="btn btn-primary form-check-input" value="{{_('Register')}}" >
         <br>
     </form>
     </div>

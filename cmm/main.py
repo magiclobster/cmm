@@ -11,7 +11,7 @@ from cmm.views.admin import admin as admin
 import flask_admin
 from flask_admin.contrib.peewee import ModelView
 
-from cmm.models.tag import Tag
+from cmm.models.tag import Tag, HiddenTag
 from cmm.models.user import User
 
 
@@ -46,6 +46,7 @@ def setup_admin():
     adm = flask_admin.Admin(app, name='CMM: admin', endpoint='admin')
     adm.add_view(ModelView(User, endpoint='users'))
     adm.add_view(ModelView(Tag, endpoint='tags'))
+    adm.add_view(ModelView(HiddenTag, endpoint='hiddentags'))
 
 
 def run_server():

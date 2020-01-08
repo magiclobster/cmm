@@ -3,8 +3,10 @@
 """
 Module for the user Pages
 """
-from flask import render_template, Blueprint, request, make_response
+from flask import render_template, Blueprint, request, make_response, flash
 from flask import current_app as app
+
+from cmm.models.tag import Tag, TagForm, get_all_tags
 from cmm.unqlite_db import create_user, get_user, get_tags
 from cmm.models.user import User
 from cmm.models.user import UserForm
@@ -24,25 +26,28 @@ def page(user_id):
 def register():
     u = User()
     form = UserForm(request.form, obj=u)
-    return render_template("user_register_p.html", tags=get_tags(), c=app.config_obj, title="Register", form=form)
+
+    return render_template("user_register_p.html", tags=get_all_tags(), c=app.config_obj, title="Register", form=form)
 
 
 @user.route('/response', methods=['POST'])
 def register_response():
-    nickname = request.form.get("nickname")
-    mail = request.form.get("mail")
-    description = request.form.get("description")
-    chaos_tags = dict()
-    for tag in tags:
-        if request.form.get(tag):
-            chaos_tags[tag] = (request.form.get(tag))
-    user_uuid = create_user(nickname, mail, description, chaos_tags)
+    u = User()
+    form = UserForm(request.form, obj=u)
+    print(request.form)
+    if form.validate():
+        u.name = request.form.get("name")
+        u.email = request.form.get("email")
+        u.description = request.form.get("description")
+        u.congress_visits = request.form.get("congress_visits")
+        chaos_tags = dict()
+        for tag in get_all_tags():
+            if request.form.get(tag):
+                chaos_tags[tag] = (request.form.get(tag))
+        User.save(u)
+
     return render_template(
         "user_register_response.html",
-        name=nickname,
-        mail=mail,
-        description=description,
-        tags=chaos_tags,
-        user_uuid=user_uuid,
+        user=u,
         c=app.config_obj,
         title="Register Response")
