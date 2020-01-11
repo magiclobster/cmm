@@ -6,7 +6,26 @@
 
 {% block content %}
 
-{% for user in users %}
- <p>{{ user.name.decode('utf8') }}</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">name</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Tags</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for user in users: %}
+<tr>
+  <td>{{user.id.decode('utf-8')}}</td>
+  <td>{{user.name.decode('utf-8')}}</td>
+  <td>{{user.mail.decode('utf-8')}}</td>
+  <td>{{user.tags.decode('utf-8')}}</td>
+  <td>{{user.description.decode('utf-8')}}</td>
+</tr>
 {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
